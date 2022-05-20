@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+<title>Untitled</title>
+<link rel=stylesheet type="text/css" href="stijl.css">
+</head>
+<body>
+<h2>Les 2 </h2>
+<p>In onze 2de les was het de bedoeling om een nuttige invulling te geven aan 
+onze dramco uno. We moeten een toepassing bedenken waarbij we via het lorawan 
+netwerk de opgemete gegevens doorsturen. 
+<br>
+Wij bedachten een toepassing waarbij we de dramco uno in de koelkast deur 
+plaatsen. De dramco uno zal de temperatuur meten en doorsturen naar een centrale 
+website die dan alarm zal geven als de koelkast te warm of te koud wordt. Met de 
+drukknop tellen we ook hoeveel keer de koelkast geopend wordt. We sturen telkens
+de gegevens elke minuut door om energie te besparen.
+<br>
+Hieronder vermelden we onze code die we geschreven hebben in arduino software voor de dramco uno
+<br>
+#include <dramco-uno.h>
+<br>
+Loraparam DevEUI = "70b3D57ed005034E";
+<br>
+Loraparam AppKey = "CEE20E517CE232f62BC0D7A11392AEE";
+<br>
+int count = 0;
+<br>
+int geheugen = 0;
+<br>
+void setup(){
+<br>
+	DramcoUno.begin(DevEUI, Appkey);
+<br>
+	
+	pinmode(4,input_pullup);
+<br>
+	
+	pinmode(A1,input);
+<br>
+	
+	pinmode(10,output);
+<br>
+	
+	}
+<br>
+<br>
+void loop() {
+<br>
+
+	if (digitalRead(4) == HIGH) {
+<br>
+	
+		digitalWrite(10,low)
+<br>
+		
+	}
+<br>
+<br>
+
+	
+	else{
+<br>
+	
+		digitalWrite(10,HIGH);
+<br>
+		
+		count = count + 1;
+<br>
+<br>
+		
+	
+	int Temperatuur = Dramcouno.readTemperature();
+<br>
+<br>
+	
+	if (count > geheugen) {
+<br>
+	
+<br>
+		dramcoUno.send();
+<br>
+		
+		geheugen == count;
+<br>
+		
+		
+	}
+<br>
+	
+
+
+</body>
+</html>

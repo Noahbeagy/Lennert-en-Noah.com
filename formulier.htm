@@ -1,0 +1,39 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+<title>Untitled</title>
+<head>
+		<title>Formulieren post</title>
+	</head>
+	
+	<body>
+		
+		<form action="toon_waarden_post.php" method="post" >
+
+      <p>Voornaam : <input type="text" name="voornaam" /></p>
+      <!-- je vindt na submit de voornaam terug in $_POST['voornaam'] -->
+			<p>Achternaam : <input type="text" name="achternaam" /></p>
+			
+			<p>Welke activiteiten wil je allemaal doen op kamp: </p>
+			<p><input type="checkbox" name="wiltOpHetStrandLiggen" value="Strand" /> Ik wil naar het strand</p>
+			<p><input type="checkbox" name="wiltWandelen" value="Wandelen" /> Ik wil wandelen</p>
+			<p><input type="checkbox" name="wiltVuilespelenDoen" value="Vuile spelen" /> Ik wil vuile spelen doen</p>
+			
+			<select name="Periode">
+			<option>01/07 tot 11/07</option>
+			<option>11/07 tot 21/07</option>
+			<option>21/07 tot 31/07</option>
+			</select>
+			
+			<p>Einde : <input type="submit" name="verzend" value="Verzend formulier" /></p>
+        
+        </form>
+		
+		
+		
+	
+	
+	</body>	
+	
+</html>
